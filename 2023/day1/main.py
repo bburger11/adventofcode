@@ -24,7 +24,7 @@ def read_input():
 
 if __name__ == '__main__':
     lines = read_input()
-    calibration_values = []
+    answer = 0
     for line in lines:
         # Find the first digit
         first = re.search(match_string, line).group()
@@ -41,9 +41,7 @@ if __name__ == '__main__':
             first = word_to_num[first]
         if not last.isdigit():
             last = word_to_num[last]
-        
-        calibration_values.append(int(f"{first}{last}"))
 
-    # Sum em up
-    result = str(sum(calibration_values))
-    print(result)
+        answer += int(f"{first}{last}")
+
+    print(answer)
